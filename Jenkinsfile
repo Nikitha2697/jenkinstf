@@ -7,7 +7,7 @@ pipeline{
     stages{
         stage('Terraform init'){
             steps{
-                scripts{
+                script{
                     sh 'terraform init'
                 }
             }
@@ -15,21 +15,21 @@ pipeline{
 
         stage('Terraform validate'){
             steps{
-                scripts{
+                script{
                     sh 'terraform validate'
                 }
             }
         }
         stage('Terraform plan'){
             steps{
-                scripts{
+                script{
                     sh 'terraform plan -auto-approve'
                 }
             }
         }
         stage('Terraform apply'){
             steps{
-                scripts{
+                script{
                     sh 'terraform apply -auto-approve'
                 }
             }
